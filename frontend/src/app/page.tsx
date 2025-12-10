@@ -1,11 +1,13 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/AboutSection";
 import PraxisSection from "@/components/PraxisSection";
 import AblaufSection from "@/components/AblaufSection";
 import FaqSection from "@/components/FaqSection";
 import KontaktSection from "@/components/KontaktSection";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 export default function Home() {
   return (
@@ -22,6 +24,7 @@ export default function Home() {
       <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-10 md:pt-16">
         <HeroSection />
         <ServicesSection />
+        <AboutSection />
         <PraxisSection />
         <AblaufSection />
         <FaqSection />
@@ -29,6 +32,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <CookieBanner />
     </div>
   );
 }

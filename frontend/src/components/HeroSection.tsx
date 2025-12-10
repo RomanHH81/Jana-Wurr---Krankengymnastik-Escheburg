@@ -68,13 +68,6 @@ export default function HeroSection() {
             </div>
           ))}
         </div>
-        <div className="mt-6 rounded-2xl bg-white/70 p-4 text-sm text-slate-700 shadow-inner">
-          <p className="font-semibold text-emerald-800">Hinweis zu Kontaktdaten</p>
-          <p className="mt-2 leading-relaxed">
-            Telefon, E-Mail und genaue Adresse bitte noch ergänzen, damit
-            Patienten direkt buchen oder den Weg finden können.
-          </p>
-        </div>
       </div>
     </section>
   );

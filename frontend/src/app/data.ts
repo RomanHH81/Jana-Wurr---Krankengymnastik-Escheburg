@@ -1,5 +1,6 @@
 export const navLinks = [
   { href: "#leistungen", label: "Leistungen" },
+  { href: "#ueber-uns", label: "Über uns" },
   { href: "#praxis", label: "Praxis" },
   { href: "#ablauf", label: "Ablauf" },
   { href: "#faq", label: "FAQ" },
@@ -27,43 +28,35 @@ export const expectationItems = [
   "Übungen, die im Alltag funktionieren",
 ];
 
-export const services = [
-  {
-    title: "Krankengymnastik & Bewegungstherapie",
-    description:
-      "Individuelle Übungen für mehr Beweglichkeit, Stabilität und Schmerzreduktion – angepasst an Ihren Alltag.",
-    tags: ["Mobilität", "Schmerzreduktion", "Alltag"],
-  },
-  {
-    title: "Manuelle Techniken",
-    description:
-      "Sanfte Mobilisation und fasziale Techniken, um Spannungen zu lösen, Gelenke zu entlasten und Beweglichkeit aufzubauen.",
-    tags: ["Gelenke", "Faszien", "Entlastung"],
-  },
-  {
-    title: "Lymphdrainage & Entstauung",
-    description:
-      "Ruhige, präzise Griffe zur Schmerzlinderung und Abschwellung nach Verletzungen oder Operationen.",
-    tags: ["Schwellungen", "Narben", "Regeneration"],
-  },
-  {
-    title: "Reha-Begleitung & Prävention",
-    description:
-      "Nach Operationen oder Verletzungen begleiten wir Sie Schritt für Schritt zurück in Ihren gewohnten Rhythmus.",
-    tags: ["Aufbau", "Stabilität", "Training"],
-  },
-  {
-    title: "Atem- & Entspannungstherapie",
-    description:
-      "Gezielte Atemtechniken und entspannende Übungen für mehr Ruhe, bessere Versorgung und weniger Stress im Alltag.",
-    tags: ["Stressreduktion", "Energie", "Balance"],
-  },
-  {
-    title: "Hausbesuche nach Verordnung",
-    description:
-      "Wenn Mobilität eingeschränkt ist, kommen wir nach Absprache auch zu Ihnen in Escheburg und Umgebung.",
-    tags: ["Flexibel", "Individuell", "Wohnortnah"],
-  },
+export const insuranceServices = [
+  "Klassische Krankengymnastik / Physiotherapie",
+  "Krankengymnastik / Physiotherapie auf neurologischer Grundlage",
+  "Vojta für Kinder und Erwachsene",
+  "Bobath für Kinder und Erwachsene",
+  "Psychomotorik für Kinder",
+  "PNF",
+  "Manuelle Therapie",
+  "Atemtherapie",
+  "Behandlung von Kiefergelenkdysfunktion",
+  "Traktionsbehandlung",
+  "Manuelle Lymphdrainage",
+  "Massage",
+  "Babygymnastik & Massage",
+  "Schmerztherapie",
+  "Rückenschule",
+  "Beckenbodengymnastik",
+  "Kryotherapie",
+  "Wärmetherapie (Heißluft, Heiße Rolle)",
+  "Hausbehandlungen",
+];
+
+export const alternativeMethods = [
+  "Reiki",
+  "Chakrenausgleich",
+  "Psychokinesiologie nach Dr. Klinghardt",
+  "Born und Breuss",
+  "Uralte, vedische Heiltechniken nach Sri Sai Kaleshwar",
+  "Gesundheitscheck als Prävention",
 ];
 
 export const values = [

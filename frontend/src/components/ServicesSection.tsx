@@ -1,4 +1,4 @@
-import { services } from "@/app/data";
+import { alternativeMethods, insuranceServices } from "@/app/data";
 
 export default function ServicesSection() {
   return (
@@ -25,32 +25,58 @@ export default function ServicesSection() {
         </span>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
-        {services.map((service) => (
-          <div
-            key={service.title}
-            className="flex h-full flex-col justify-between rounded-2xl border border-white/70 bg-white/90 p-6 shadow-md shadow-emerald-50 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-100"
-          >
-            <div className="space-y-3">
-              <h3 className="text-xl font-semibold text-slate-900">
-                {service.title}
-              </h3>
-              <p className="leading-relaxed text-slate-700">
-                {service.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800"
-                  >
-                    {tag}
-                  </span>
-                ))}
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="rounded-2xl border border-white/70 bg-white/90 p-6 shadow-md shadow-emerald-50">
+          <h3 className="text-xl font-semibold text-slate-900">
+            Kassenärztliche Leistungen
+          </h3>
+          <p className="mt-2 text-slate-700">
+            Aus dem Heilmittelkatalog bieten wir diese Behandlungen an:
+          </p>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {insuranceServices.map((item) => (
+              <div
+                key={item}
+                className="rounded-xl bg-emerald-50/60 px-3 py-2 text-sm text-emerald-900 shadow-inner shadow-emerald-100"
+              >
+                {item}
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div className="rounded-2xl border border-white/70 bg-white/90 p-6 shadow-md shadow-emerald-50">
+          <h3 className="text-xl font-semibold text-slate-900">
+            Alternative Behandlungsmöglichkeiten
+          </h3>
+          <p className="mt-2 text-slate-700">
+            Ganzheitlicher Ansatz, um die Selbstheilungskräfte von Körper, Geist
+            und Seele anzuregen.
+          </p>
+          <div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-700">
+            <p>
+              Ziel dieser Methoden ist es, Disharmonien der drei Säulen zu
+              erkennen und auszugleichen. Schmerzen verstehen wir oft als Signal
+              für ein Ungleichgewicht; frühzeitig gegenzusteuern kann
+              langfristige Beschwerden vermeiden.
+            </p>
+            <p>
+              Werden Entwicklungsschritte übersprungen, zeigt sich das später in
+              Konzentration, Motorik und Verhalten. Mit diesen Methoden lassen
+              sich Blockaden lösen und Ressourcen stärken.
+            </p>
+          </div>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {alternativeMethods.map((item) => (
+              <div
+                key={item}
+                className="rounded-xl bg-emerald-50/60 px-3 py-2 text-sm text-emerald-900 shadow-inner shadow-emerald-100"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

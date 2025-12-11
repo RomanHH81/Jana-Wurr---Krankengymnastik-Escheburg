@@ -15,13 +15,6 @@ export default function LegalLinks() {
       >
         Datenschutz
       </a>
-      <a
-        href="/barrierefreiheit"
-        className="rounded-full border border-emerald-200 bg-white px-4 py-2 font-semibold text-emerald-800 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
-        aria-label="Barrierefreiheit anzeigen"
-      >
-        Barrierefreiheit
-      </a>
     </div>
   );
 }

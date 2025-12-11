@@ -94,13 +94,6 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/#kontakt"
-            className="mt-2 rounded-full bg-emerald-600 px-4 py-2 text-center text-sm font-semibold text-white shadow-lg shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-700"
-            onClick={() => setOpen(false)}
-          >
-            Termin anfragen
-          </Link>
         </div>
       </div>
     </header>

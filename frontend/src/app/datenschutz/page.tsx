@@ -2,11 +2,9 @@ export const metadata = {
   title: "Datenschutz | Krankengymnastik Jana Wurr",
 };
 
-import Link from "next/link";
-
 export default function DatenschutzPage() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-16 space-y-4">
+    <div className="mx-auto max-w-4xl space-y-4 py-8">
       <h1 className="text-3xl font-semibold text-slate-900">Datenschutz</h1>
       <p className="text-slate-700">
         Wir verarbeiten personenbezogene Daten nur im Rahmen der gesetzlichen
@@ -27,14 +25,6 @@ export default function DatenschutzPage() {
         verzichten wir; Cookies werden nur für technisch notwendige Zwecke
         (z. B. Cookie-Banner-Einstellung) gesetzt.
       </p>
-      <div className="pt-4">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
-        >
-          ← Zurück zur Startseite
-        </Link>
-      </div>
-    </main>
+    </div>
   );
 }

@@ -1,10 +1,10 @@
 export const navLinks = [
-  { href: "#leistungen", label: "Leistungen" },
-  { href: "#ueber-uns", label: "Über uns" },
-  { href: "#praxis", label: "Praxis" },
-  { href: "#ablauf", label: "Ablauf" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#leistungen", label: "Leistungen" },
+  { href: "/#ueber-uns", label: "Über uns" },
+  { href: "/#praxis", label: "Praxis" },
+  { href: "/#ablauf", label: "Ablauf" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 export const quickFacts = [

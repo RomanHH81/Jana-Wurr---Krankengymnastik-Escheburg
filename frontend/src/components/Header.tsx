@@ -36,11 +36,11 @@ export default function Header() {
           </div>
           {width !== null && width >= 641 && (
             <div className="leading-tight">
-              <p className="text-xs uppercase tracking-[0.28em] text-emerald-700">
+              <p className="text-xs uppercase tracking-[0.18em] text-emerald-700">
                 Krankengymnastik
               </p>
               <p className="text-sm font-semibold text-slate-900">
-                Jana Wurr
+                Jana Wurr · Escheburg
               </p>
             </div>
           )}
@@ -55,8 +55,8 @@ export default function Header() {
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold uppercase text-white shadow-lg shadow-emerald-200">
             JW
           </div>
-          <div className="hidden leading-tight lg:flex">
-            <p className="text-sm uppercase tracking-[0.2em] text-emerald-700">
+          <div className="hidden leading-tight lg:flex lg:flex-col lg:items-start lg:gap-0.5">
+            <p className="text-sm uppercase tracking-[0.14em] text-emerald-700">
               Krankengymnastik
             </p>
             <p className="text-sm font-semibold text-slate-900">
@@ -90,7 +90,9 @@ export default function Header() {
       {/* Mobile dropdown */}
       <div
         id="mobile-nav"
-        className={`md:hidden ${open ? "block" : "hidden"} border-t border-white/80 bg-white/95 shadow-lg shadow-emerald-100`}
+        className={`md:hidden ${
+          open ? "block" : "hidden"
+        } border-t border-white/80 bg-white/95 shadow-lg shadow-emerald-100`}
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 text-sm font-medium text-slate-800">
           {navLinks.map((link) => (

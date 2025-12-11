@@ -19,6 +19,26 @@ export const metadata: Metadata = {
   title: "Krankengymnastik Escheburg | Jana Wurr",
   description:
     "Moderne Physiotherapie, persönliche Betreuung und klare Wege zu mehr Beweglichkeit in Escheburg. Termine nach Vereinbarung.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Krankengymnastik Escheburg | Jana Wurr",
+    description:
+      "Moderne Physiotherapie und manuelle Techniken in Escheburg. Persönliche Betreuung, klare Abläufe, Termine nach Vereinbarung.",
+    url: "https://www.krankengymnastik-escheburg.de/",
+    siteName: "Krankengymnastik Jana Wurr",
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Krankengymnastik Escheburg | Jana Wurr",
+    description:
+      "Physiotherapie, manuelle Techniken, Reha-Begleitung und ruhige Praxisräume in Escheburg.",
+  },
+  applicationName: "Krankengymnastik Jana Wurr",
+  category: "healthcare",
 };
 
 export default function RootLayout({
@@ -38,11 +58,31 @@ export default function RootLayout({
           </div>
 
           <Header />
-          <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
+          <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
             {children}
-          </div>
+          </main>
           <Footer />
           <CookieBanner />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Physiotherapy",
+                name: "Krankengymnastik Jana Wurr",
+                url: "https://www.krankengymnastik-escheburg.de/",
+                telephone: "+494152805599",
+                email: "mail@praxis-escheburg.de",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Rehmenkoppel 28",
+                  postalCode: "21039",
+                  addressLocality: "Escheburg",
+                  addressCountry: "DE",
+                },
+              }),
+            }}
+          />
         </div>
       </body>
     </html>

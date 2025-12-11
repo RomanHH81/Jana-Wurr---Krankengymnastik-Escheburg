@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import { CookieConsentProvider } from "@/components/CookieConsentProvider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -49,41 +50,43 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={`${manrope.variable} ${playfair.variable} antialiased`}>
-        <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-br from-emerald-50 via-white to-slate-50 text-slate-900">
-          <div
-            className="pointer-events-none absolute inset-x-0 top-[-12rem] -z-10 transform-gpu blur-3xl"
-            aria-hidden
-          >
-            <div className="mx-auto h-64 max-w-5xl bg-gradient-to-r from-emerald-200 via-teal-100 to-cyan-100 opacity-70" />
-          </div>
+        <CookieConsentProvider>
+          <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-br from-emerald-50 via-white to-slate-50 text-slate-900">
+            <div
+              className="pointer-events-none absolute inset-x-0 top-[-12rem] -z-10 transform-gpu blur-3xl"
+              aria-hidden
+            >
+              <div className="mx-auto h-64 max-w-5xl bg-gradient-to-r from-emerald-200 via-teal-100 to-cyan-100 opacity-70" />
+            </div>
 
-          <Header />
-          <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
-            {children}
-          </main>
-          <Footer />
-          <CookieBanner />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Physiotherapy",
-                name: "Krankengymnastik Jana Wurr",
-                url: "https://www.krankengymnastik-escheburg.de/",
-                telephone: "+494152805599",
-                email: "mail@praxis-escheburg.de",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: "Rehmenkoppel 28",
-                  postalCode: "21039",
-                  addressLocality: "Escheburg",
-                  addressCountry: "DE",
-                },
-              }),
-            }}
-          />
-        </div>
+            <Header />
+            <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
+              {children}
+            </main>
+            <Footer />
+            <CookieBanner />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Physiotherapy",
+                  name: "Krankengymnastik Jana Wurr",
+                  url: "https://www.krankengymnastik-escheburg.de/",
+                  telephone: "+494152805599",
+                  email: "mail@praxis-escheburg.de",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Rehmenkoppel 28",
+                    postalCode: "21039",
+                    addressLocality: "Escheburg",
+                    addressCountry: "DE",
+                  },
+                }),
+              }}
+            />
+          </div>
+        </CookieConsentProvider>
       </body>
     </html>
   );

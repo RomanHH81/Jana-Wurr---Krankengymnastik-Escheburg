@@ -1,64 +1,59 @@
 "use client";
 
-import { startTransition, useEffect, useState } from "react";
+import Link from "next/link";
+import { useCookieConsent } from "./CookieConsentProvider";
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState<boolean>(false);
+  const {
+    ready,
+    bannerVisible,
+    acceptAll,
+    acceptNecessary,
+  } = useCookieConsent();
 
-  useEffect(() => {
-    const accepted = localStorage.getItem("cookie-ack");
-    startTransition(() => {
-      setVisible(!accepted);
-    });
-    // Showing banner after mount to avoid SSR/CSR mismatch
-  }, []);
-
-  const accept = () => {
-    localStorage.setItem("cookie-ack", "all");
-    setVisible(false);
-  };
-
-  const reject = () => {
-    localStorage.setItem("cookie-ack", "necessary-only");
-    setVisible(false);
-  };
-
-  const manage = () => {
-    // Placeholder: would open preferences modal if present
-    localStorage.setItem("cookie-ack", "manage");
-    setVisible(false);
-  };
-
-  if (!visible) return null;
+  // Avoid hydration mismatch and only show when explicitly requested or needed.
+  if (!ready || !bannerVisible) return null;
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl -translate-x-1/2 rounded-2xl border border-emerald-200 bg-white/95 p-4 shadow-xl shadow-emerald-100 backdrop-blur">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="space-y-1 text-sm text-slate-800">
-          <p className="font-semibold text-slate-900">Hinweis zu Cookies</p>
-          <p>
-            Für eingebettete Inhalte (z. B. Google Maps) können technisch
-            notwendige Cookies entstehen. Mit „Verstanden“ stimmen Sie dem zu.
+    <div className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl -translate-x-1/2 rounded-2xl border border-emerald-200 bg-white/95 p-5 shadow-xl shadow-emerald-100 backdrop-blur">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <div className="space-y-2 text-sm leading-relaxed text-slate-800">
+          <p className="text-base font-semibold text-slate-900">
+            Wir verwenden Cookies
           </p>
+          <p>
+            Wir setzen technisch notwendige Cookies, um die Seite bereitzustellen.
+            Optionale Dienste (z. B. Tracking) werden erst nach Zustimmung geladen
+            und können jederzeit widerrufen werden.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-emerald-800">
+            <Link
+              href="/datenschutz"
+              className="underline decoration-emerald-300 decoration-2 underline-offset-4 transition hover:text-emerald-900"
+            >
+              Datenschutzerklärung
+            </Link>
+            <span className="text-slate-300">·</span>
+            <Link
+              href="/impressum"
+              className="underline decoration-emerald-300 decoration-2 underline-offset-4 transition hover:text-emerald-900"
+            >
+              Impressum
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 sm:justify-end">
           <button
-            className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-700"
-            onClick={accept}
+            className="inline-flex w-full min-w-[190px] items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-700 sm:w-[220px]"
+            onClick={acceptAll}
           >
             Alle akzeptieren
           </button>
           <button
-            className="rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
-            onClick={reject}
+            className="inline-flex w-full min-w-[190px] items-center justify-center rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 sm:w-[220px]"
+            onClick={acceptNecessary}
           >
-            Nur notwendig
-          </button>
-          <button
-            className="rounded-full border border-transparent bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-200"
-            onClick={manage}
-          >
-            Einstellungen
+            Nur notwendige Cookies
           </button>
         </div>
       </div>

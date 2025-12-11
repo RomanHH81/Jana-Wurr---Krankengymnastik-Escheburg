@@ -1,3 +1,5 @@
+import MapWithConsent from "@/components/MapWithConsent";
+
 export default function KontaktSection() {
   return (
     <section
@@ -61,15 +63,7 @@ export default function KontaktSection() {
 
       <div className="rounded-3xl border border-white/80 bg-white/90 p-4 shadow-lg shadow-emerald-100">
         <div className="flex h-full items-center justify-center overflow-hidden rounded-2xl border border-emerald-100 bg-emerald-50/40 shadow-inner shadow-emerald-100">
-          <iframe
-            title="Anfahrt Praxis Jana Wurr"
-            src="https://www.google.com/maps?q=Rehmenkoppel+28+21039+Escheburg&output=embed"
-            width="100%"
-            height="360"
-            loading="lazy"
-            className="border-0 max-w-[640px]"
-            allowFullScreen
-          />
+          <MapWithConsent />
         </div>
       </div>
     </section>

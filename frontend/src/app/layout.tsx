@@ -28,10 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body
-        className={`${manrope.variable} ${playfair.variable} antialiased`}
-      >
-        <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-slate-50 text-slate-900">
+      <body className={`${manrope.variable} ${playfair.variable} antialiased`}>
+        <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-br from-emerald-50 via-white to-slate-50 text-slate-900">
           <div
             className="pointer-events-none absolute inset-x-0 top-[-12rem] -z-10 transform-gpu blur-3xl"
             aria-hidden

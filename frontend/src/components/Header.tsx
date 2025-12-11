@@ -56,10 +56,12 @@ export default function Header() {
             JW
           </div>
           <div className="hidden leading-tight lg:flex">
-            <p className="text-xs uppercase tracking-[0.28em] text-emerald-700">
+            <p className="text-sm uppercase tracking-[0.18em] text-emerald-700">
               Krankengymnastik
             </p>
-            <p className="text-lg font-semibold">Jana Wurr · Escheburg</p>
+            <p className="text-sm font-semibold text-slate-900">
+              Jana Wurr · Escheburg
+            </p>
           </div>
         </Link>
 

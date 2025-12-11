@@ -38,7 +38,7 @@ export default function RootLayout({
           </div>
 
           <Header />
-          <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-10 md:pt-16">
+          <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-28">
             {children}
           </div>
           <Footer />

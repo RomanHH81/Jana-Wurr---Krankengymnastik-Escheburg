@@ -25,6 +25,20 @@ export default function BarrierefreiheitPage() {
       </section>
 
       <section className="space-y-2 rounded-2xl bg-white/80 p-4 shadow-inner shadow-emerald-50">
+        <h2 className="text-lg font-semibold text-slate-900">
+          Rechtlicher Hinweis (EAA/BFSG/WCAG)
+        </h2>
+        <p className="text-slate-700">
+          Grundlage sind u. a. der European Accessibility Act (Richtlinie
+          2019/882), die Web Accessibility Directive (2016/2102) und in
+          Deutschland das Barrierefreiheitsstärkungsgesetz (BFSG, ab 28. Juni
+          2025 für bestimmte private Anbieter). Als Maßstab dienen WCAG 2.1 AA /
+          EN 301 549. Kleinstunternehmen können ausgenommen sein; prüfen Sie
+          bitte Ihre konkrete Verpflichtung.
+        </p>
+      </section>
+
+      <section className="space-y-2 rounded-2xl bg-white/80 p-4 shadow-inner shadow-emerald-50">
         <h2 className="text-lg font-semibold text-slate-900">Geplante Verbesserungen</h2>
         <ul className="list-disc space-y-1 pl-6 text-slate-700">
           <li>Detail-Review der Seiten per Screenreader-Test.</li>

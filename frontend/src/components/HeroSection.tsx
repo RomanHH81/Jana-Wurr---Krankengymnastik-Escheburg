@@ -1,8 +1,5 @@
 import CheckIcon from "@/components/CheckIcon";
-import {
-  expectationItems,
-  quickFacts,
-} from "@/app/data";
+import { expectationItems, quickFacts } from "@/app/data";
 
 export default function HeroSection() {
   return (
@@ -25,20 +22,6 @@ export default function HeroSection() {
           Techniken und ruhige Übungsräume. So finden wir gemeinsam den Weg, der
           zu Ihrem Körper und Ihrem Alltag passt.
         </p>
-        <div className="flex flex-wrap gap-3">
-          <a
-            className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-700"
-            href="#kontakt"
-          >
-            Termin anfragen
-          </a>
-          <a
-            className="rounded-full border border-emerald-200 bg-white px-5 py-3 text-sm font-semibold text-emerald-800 transition hover:-translate-y-0.5 hover:border-emerald-300"
-            href="#leistungen"
-          >
-            Leistungen entdecken
-          </a>
-        </div>
         <div className="grid gap-4 sm:grid-cols-3">
           {quickFacts.map((fact) => (
             <div
@@ -57,7 +40,9 @@ export default function HeroSection() {
       </div>
 
       <div className="rounded-3xl border border-emerald-100 bg-gradient-to-br from-white via-emerald-50 to-white p-8 shadow-lg shadow-emerald-100">
-        <p className="text-sm font-semibold text-emerald-700">Was Sie erwartet</p>
+        <p className="text-sm font-semibold text-emerald-700">
+          Was Sie erwartet
+        </p>
         <div className="mt-4 space-y-3 text-slate-700">
           {expectationItems.map((item) => (
             <div key={item} className="flex items-start gap-3">

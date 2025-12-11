@@ -56,7 +56,7 @@ export default function Header() {
             JW
           </div>
           <div className="hidden leading-tight lg:flex">
-            <p className="text-sm uppercase tracking-[0.18em] text-emerald-700">
+            <p className="text-sm uppercase tracking-[0.2em] text-emerald-700">
               Krankengymnastik
             </p>
             <p className="text-sm font-semibold text-slate-900">

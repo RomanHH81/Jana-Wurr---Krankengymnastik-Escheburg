@@ -6,10 +6,15 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [width, setWidth] = useState<number | null>(null);
 
   useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    handleResize();
     const onResize = () => {
-      if (window.innerWidth >= 768) setOpen(false);
+      const w = window.innerWidth;
+      setWidth(w);
+      if (w >= 768) setOpen(false);
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -29,14 +34,16 @@ export default function Header() {
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold uppercase text-white shadow-lg shadow-emerald-200">
             JW
           </div>
-          <div className="hidden leading-tight sm:flex">
-            <p className="text-xs uppercase tracking-[0.28em] text-emerald-700">
-              Krankengymnastik
-            </p>
-            <p className="text-sm font-semibold text-slate-900 sm:ml-2">
-              Jana Wurr
-            </p>
-          </div>
+          {width !== null && width >= 641 && (
+            <div className="leading-tight">
+              <p className="text-xs uppercase tracking-[0.28em] text-emerald-700">
+                Krankengymnastik
+              </p>
+              <p className="text-sm font-semibold text-slate-900">
+                Jana Wurr
+              </p>
+            </div>
+          )}
         </button>
 
         {/* Desktop / Tablet logo */}
